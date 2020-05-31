@@ -1,0 +1,17 @@
+<script>
+    var mymap = L.map('mapid').setView([0, 0], 15);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=pcrwSD0tO3qKWsrAy2zo', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        maxZoom: 25,
+    }).addTo(mymap);
+    var marker = L.marker([28.1914, 83.9718]).addTo(mymap);
+    var circle = L.circle([28.1914, 83.9718], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 250
+    }).addTo(mymap);
+    marker.bindPopup("BIRAUTA,POKHARA").openPopup();
+    polygon.bindPopup("I am a polygon.");
+
+</script>

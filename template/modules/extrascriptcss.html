@@ -1,0 +1,23 @@
+<script>
+    var mymap = L.map('mapid').setView([{{desc_1.lat}}, {{desc_1.longi}}], 15);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=pcrwSD0tO3qKWsrAy2zo', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        maxZoom: 30,
+    }).addTo(mymap);
+    var marker = L.marker([{{desc_1.lat}}, {{desc_1.longi}}]).addTo(mymap);
+    var circle = L.circle([{{desc_1.lat}}, {{desc_1.longi}}-0.011], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(mymap);
+    var polygon = L.polygon([
+        [51.509, -0.08],
+        [51.503, -0.06],
+        [51.51, -0.047]
+    ]).addTo(mymap);
+    marker.bindPopup("{{desc_1.name}}").openPopup();
+    circle.bindPopup();
+    polygon.bindPopup("I am a polygon.");
+
+</script>

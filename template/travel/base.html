@@ -1,0 +1,429 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta name="google-site-verification" content="mbLTT_K4jhqzWIIcYSkp14baF4kG5uZ2Cadc50ytnWQ" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}THE YATRI{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'travel/img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'travel/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'travel/css/slicknav.css' %}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="{% static 'travel/css/slider.css' %}"> -->
+    
+
+    <link rel="stylesheet" href="{% static 'travel/css/style.css' %}">
+	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous-->
+	<!-- Font Awesome -->
+	<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">-->
+	<!-- Google Fonts -->
+	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">-->
+	<!-- Bootstrap core CSS -->
+	<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
+	<!-- Material Design Bootstrap -->
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet> -->
+	
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    
+    {% block link %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=2261064210855232&autoLogAppEvents=1"></script>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="/">
+                                        <img src="{% static 'travel/img/Yatri.png' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="/">Home</a></li>
+                                            <li><a href="#">Destinations<i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/destinations?field=Destinations">All Places</a></li>
+                                                    <li><a href="#">Categories<i class="ti-angle-right"></i></a>
+                                                    <ul class="submenu1">
+                                                        <li><a href="religious?field=ReligiousPlaces">Religious Places</a></li>
+                                                        <li><a href="trecking?field=Trecking">Trekking</a></li>
+                                                        <li><a href="familyplaces?field=FamilyPlaces">Family Places</a></li>
+                                                        <li><a href="budgetplaces?field=BudgetPlaces">Budget Places</a></li>
+                                                        <li><a href="honeymoon?field=Honeymoon">Honeymoon</a></li>
+                                                        <li><a href="nationalparks?field=NationalParks">National Parks</a></li>
+                                                    </ul>
+                                                    </li>
+                                                </ul>
+											</li>
+											{% if user.is_authenticated %}											
+											<li><a href="/Accounts/profile">Hello, {{user.first_name}} <i class="ti-angle-down"></i> </a>                                            
+                                                <ul class="submenu">
+														<li><a href="/Accounts/profile">View Profile  </a></li>
+														<li><a href="/Accounts/logout">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            {% else %}
+                                            <li><a href="/Accounts/login">Accounts <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                        <li><a href="/Accounts/login">Login</a></li>
+                                                        <li><a href="/Accounts/register">Register</a></li>
+                                                </ul>
+                                            </li>
+                                            {% endif %}
+                                            
+                                            <li><a href="/blog">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/blog">blog <i class="ti-angle-right"></i></a>
+                                                        <ul class="submenu1">
+                                                            <li><a href="/singleblog">single-blog</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/contacts">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                    <div class="number">
+                                        <p> <i class="fa fa-phone"></i> 9843704881</p>
+                                    </div>
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li><a href="https://www.instagram.com/sijandhungana/"> <i class="fa fa-instagram"></i> </a></li>
+                                            <li><a href="https://www.linkedin.com/in/sijan-dhungana-3a50961a5/"> <i class="fa fa-linkedin"></i> </a></li>
+                                            <li><a href="https://www.facebook.com/season.dhungana"> <i class="fa fa-facebook"></i> </a></li>
+                                            <li><a href="https://myaccount.google.com/profile?pli=1"> <i class="fa fa-google-plus"></i> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seach_icon">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+
+    {% block togo %}
+
+    {% endblock %}
+	
+    
+	
+
+    <div>
+    {% for messages in messages %}
+
+    <script>
+        window.onload = startcountdown;
+         function startcountdown(){
+            alert(" {{messages}} ")
+        }
+        </script> 
+    {%endfor%}
+	</div>
+
+	
+    {% block content %}
+
+    {% endblock %}
+
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="{% static 'travel/img/Yatri.png' %}" alt="">
+                                </a>
+                            </div>
+                            <p>5th flora, birauta road <br> sanchayakos bhawan-L , Pokhara <br>
+                                <a href="#">+9779843704881</a> <br>
+                                <a href="#">info@theyatri.com</a>
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/season.dhungana">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/sijandhungana/">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Booking</a></li>
+                                <li><a href="/destinations?field=Destinations">Destinations</a></li>
+                                <li><a href="/contacts"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Popular destination
+                            </h3>
+                        
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Pokhara">Pokhara</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Kathmandu">Kathmandu</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Butwal">Butwal</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=syangja">Syangja</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Dhangadi">Dhangadi</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Manang">Manang</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Ghandruk">Ghandruk</a></li>
+                            </ul>
+                            <ul class="links double_links">
+                                <li><a href="/discription?field=Chitwan">Chitwan</a></li>
+                            </ul>
+                            
+                        
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Instagram
+                            </h3>
+                            <div class="instagram_feed">
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/1.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/2.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/3.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/4.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/5.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="{% static 'travel/img/instagram/6.png' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+  <!-- Modal -->
+  <div  class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-content">
+	  <div class="serch_form">
+		  <form action="search" method="post">
+			  {% csrf_token %}
+		  <input type="text" name="name"  placeholder="Search" >
+		  <button type="submit">search</button>
+		  </form>
+	  </div>
+	</div>
+  </div>
+</div>
+    <!-- link that opens popup -->
+<!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
+    <!-- JS here -->
+    <!-- <script src="{% static 'travel/js/slider.js' %}"></script> -->
+    <script src="{% static 'travel/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'travel/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'travel/js/popper.min.js' %}"></script>
+    <script src="{% static 'travel/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'travel/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'travel/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'travel/js/ajax-form.js' %}"></script>
+    <script src="{% static 'travel/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'travel/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'travel/js/scrollIt.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'travel/js/wow.min.js' %}"></script>
+    <script src="{% static 'travel/js/jquery-ui.min.js' %}"> </script>
+    <script src="{% static 'travel/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'travel/js/plugins.js' %}"></script>
+    <script src="{% static 'travel/js/range.js' %}"></script>
+    <script src="{% static 'travel/js/gijgo.min.js' %}"></script>
+    <script src="{% static 'travel/js/slick.min.js' %}"></script>
+	<!-- JQuery -->
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--<!-- Bootstrap tooltips -->
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
+	<!-- Bootstrap core JavaScript -->
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script-->
+	<!-- MDB core JavaScript -->
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>-->
+   
+	
+	<script>
+	 window.fbAsyncInit = function() {
+	   FB.init({
+		 appId            : '2261064210855232',
+		 autoLogAppEvents : true,
+		 xfbml            : true,
+		 version          : 'v2.11'
+	   });
+	 };
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+	</script>
+    
+    <!--contact js-->
+    <script src="{% static 'travel/js/comment.js' %}"></script>
+    <script src="{% static 'travel/js/contact.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.form.js' %}"></script>
+    <script src="{% static 'travel/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'travel/js/mail-script.js' %}"></script>
+	<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script> -->
+	<script>
+    $(window).load(function(){        
+       $('#myModal').modal('show');
+	}); 	
+	</script>
+
+    <script src="{% static 'travel/js/main.js' %}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+    </script>
+  
+</body>
+
+</html>

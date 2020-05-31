@@ -1,0 +1,358 @@
+
+<div class="col-lg-8">
+    {% if desc_1 == 'Destinations' or desc_1 == 'Popular'  %}
+    <h1 style="color:red;">Popular Places</h1><br>
+    <div class="row">
+
+    {% for dest in dest %}
+
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'Popular' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN </a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+
+    {% if desc_1 == 'ReligiousPlaces' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">Religious Places</h1><br>
+    <div class="row">
+    {% for dest in dest1 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'ReligiousPlaces' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+    {% if desc_1 == 'FamilyPlaces' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">Family Places</h1><br>
+    <div class="row">
+        {% for dest in dest2 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'FamilyPlaces' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}    
+    {% endif %}
+     {% if desc_1 == 'Honeymoon' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">HoneyMoon Places</h1><br>
+    <div class="row">
+    {% for dest in dest3 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'Honeymoon' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+    {% if desc_1 == 'Trecking' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">Trecking Places</h1><br>
+    <div class="row">
+    {% for dest in dest4 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'Trecking' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}    
+    {% endif %}
+    {% if desc_1 == 'NationalParks' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">National Parks</h1><br>
+    <div class="row">
+    {% for dest in dest5 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% if desc_1 == 'NationalParks' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+    {% if desc_1 == 'BudgetPlaces' or desc_1 == 'Destinations' %}
+    <br><br><h1 style="color:red;">Budget Places</h1><br>
+    <div class="row">
+    {% for dest in dest6 %}
+    <div class="col-lg-6 col-md-6">
+        <div class="single_place">
+            <div class="thumb">
+                <img src="{{dest.img.url}}" alt="">
+                <a href="discription?field={{dest.name}}" class="prise">${{dest.price}}</a>
+            </div>
+            <div class="place_info">
+                <a href="discription?field={{dest.name}}"><h3>{{dest.name}}</h3></a>
+                <p>{{dest.country}}</p>
+                <div class="rating_days d-flex justify-content-between">
+                    <span class="d-flex justify-content-center align-items-center">
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i> 
+                         <i class="fa fa-star"></i>
+                         <a href="#">(20 Review)</a>
+                    </span>
+                    <div class="days">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="discription?field={{dest.name}}">5 Days</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    </div>
+    {% if desc_1 == 'BudgetPlaces' %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="/">RETURN</a>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="popular?field=Popular">Next</a>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+    <br><br>
+</div>
